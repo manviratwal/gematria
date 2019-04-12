@@ -15,20 +15,21 @@ namespace longetwordd
             Console.WriteLine(a.MyFunctionA("Ada Lovelace wrote the first algorithm designed for processing by an Analytical Engine."));
         }
 
-        private bool MyFunctionA(string v)
-        {
-            throw new NotImplementedException();
-        }
+        //private bool MyFunctionA(string v)
+        //{
+        //    throw new NotImplementedException();
+        //}
         //manvir
-        public MyFunctionA(string input)
+        public String MyFunctionA (string input)
         {
-            //Write a C# program to find the longes word in a string.
+            //Write a C# program to find the longest word in a string.
             string[] words = input.Split(' ');
             int wordarrayLength = words.Length;
-
-            foreach (var wod in words)
+            String longestword=words[0];
+            int[] wordsLength = new int[words.Length];
+            for (int s = 0; s < words.Length; s++)
             {
-                //TODO
+                wordsLength[s] = words[s].Length;
             }
             // loop post condition: we now jave array wordsLength which contains the lengths of each word
 
@@ -38,14 +39,19 @@ namespace longetwordd
             for (int y = 0; y < words.Length - 1; y++)
             {
                 currentWord = words[y];
+                
                 nextWord = words[y + 1];
+                if (words[y+1].Equals(words[y]))
+                {
+                    longestword = words[y + 1];
+                }
+                
                 // TODO :Use an IF Statementr to make sure thet variable longestWord is always set to the Longest Word in the input string
             }
-            
+            return longestword;
+
         }
 
-        public Program()
-        {
-        }
+        
     }
 }
